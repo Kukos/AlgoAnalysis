@@ -65,11 +65,8 @@ size_t kmin(long (*get_number)(void), size_t len, size_t k, uint32_t(*hash_f)(co
 
     if (hashes[k - 1] == MAX_HASH)
     {
-        i = 0;
-        while (i < k && hashes[i] < MAX_HASH)
-            ++i;
-
-        estimated_n = i;
+        h = MAX_HASH;
+        estimated_n = (size_t)find_first_sorted((const void *)&h, hashes, k, cmp_hash, sizeof(uint32_t));
     }
     else
         estimated_n = (size_t)((long double)(k - 1) / (long double)((long double)hashes[k - 1] / (long double)MAX_HASH));

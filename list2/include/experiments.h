@@ -51,5 +51,18 @@ void experiment2(size_t n, int percent);
 */
 void experiment3(double epsilon);
 
+/*
+    Check value of epsilon such that Pr[n^/ n < epsilon] = probability
+
+    PARAMS
+    @IN n - max size of Set
+    @IN k - k for kmin
+    @IN prob - array of probability
+    @IN prob_len - len(prob)
+
+    RETURN
+    This is a void function
+*/
+void experiment4(size_t n, size_t k, double *prob, size_t prob_len);
 
 #endif

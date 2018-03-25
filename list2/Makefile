@@ -10,7 +10,7 @@ OBJS := $(SRCS:%.c=%.o)
 DEPS := $(wildcard $(IDIR)/*.h)
 DEPS += $(wildcard $(EIDIR)/*.h)
 
-LIBS := -lsearch -lsort -lhash
+LIBS := -lsearch -lsort -lhash -lm
 
 EXEC := $(THIS_DIR)/kmin.out
 
