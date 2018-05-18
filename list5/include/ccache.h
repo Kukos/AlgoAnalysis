@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 #include <common.h>
+#include <stdbool.h>
 
 typedef struct CCache
 {

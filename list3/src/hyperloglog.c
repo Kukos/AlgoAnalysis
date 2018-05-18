@@ -42,7 +42,7 @@ size_t hyper_loglog(long (*get_number)(void), size_t len, size_t b, uint32_t(*ha
         index = (uint32_t)HYPER_LOGLOG_GET_INDEX(h, b);
         value = (uint32_t)HYPER_LOGLOG_GET_VALUE(h, b);
 
-        t[index] = (int8_t)MAX(t[index], (int8_t)(leading_0(value) + 1 - (int)b));
+        t[index] = (int8_t)MAX(t[index], (int8_t)((int)leading_0(value) + 1 - (int)b));
     }
 
     /* calc estimated n */

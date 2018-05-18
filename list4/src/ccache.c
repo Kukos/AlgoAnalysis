@@ -11,6 +11,7 @@
 #include <cstring.h>
 #include <filebuffer.h>
 #include <ctype.h>
+#include <string.h>
 
 static const char * const PATH_TO_CACHE = "./ccache";
 
