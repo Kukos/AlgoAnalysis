@@ -12,6 +12,7 @@
 
 #include <stddef.h>
 #include <gsl/gsl_matrix.h>
+#include <gsl/gsl_vector.h>
 #include <graph.h>
 
 typedef struct MGoogle
@@ -56,6 +57,6 @@ void mgoogle_destroy(MGoogle *mg);
     NULL iff failure
     Pointer to rank vector (for each page) iff success
 */
-double *pagerank(const MGoogle *mg);
+gsl_vector *pagerank(const MGoogle *mg);
 
 #endif
