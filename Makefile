@@ -50,7 +50,7 @@ define print_bin
 	$(if $(Q), @echo "[BIN]     $$(1)")
 endef
 
-all: l1 l2 l3 l4 l5 l6
+all: l1 l2 l3 l4 l5 l6 l7
 
 libs:
 	$(Q)if [ ! -d $(LDIR) ]; then \
@@ -82,6 +82,10 @@ l6: libs
 	$(call print_make,list6)
 	$(Q)$(MAKE) -f $(PROJECT_DIR)/list6/Makefile --no-print-directory
 
+l7: libs
+	$(call print_make,list7)
+	$(Q)$(MAKE) -f $(PROJECT_DIR)/list7/Makefile --no-print-directory
+
 clean:
 	$(call print_info,Cleaning)
 	$(Q)$(MAKE) -f $(PROJECT_DIR)/list1/Makefile clean --no-print-directory
@@ -90,6 +94,7 @@ clean:
 	$(Q)$(MAKE) -f $(PROJECT_DIR)/list4/Makefile clean --no-print-directory
 	$(Q)$(MAKE) -f $(PROJECT_DIR)/list5/Makefile clean --no-print-directory
 	$(Q)$(MAKE) -f $(PROJECT_DIR)/list6/Makefile clean --no-print-directory
+	$(Q)$(MAKE) -f $(PROJECT_DIR)/list7/Makefile clean --no-print-directory
 
 clean_libs:
 	$(Q)$(RM) $(EDIR)/*
